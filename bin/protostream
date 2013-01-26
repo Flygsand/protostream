@@ -1,0 +1,16 @@
+#!/usr/bin/env python
+# -*- mode: python; tab-width: 4; indent-tabs-mode: nil; encoding: utf-8 -*-
+
+import protostream
+
+app = protostream.App()
+
+import protostream.hooks
+
+try:
+    app.setup()
+    app.args.add_argument('-c', '--config', dest='config_file', default='config.json')
+
+    app.run()
+finally:
+    app.close()
